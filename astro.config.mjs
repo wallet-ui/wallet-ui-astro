@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-	site: 'https://wallet-ui.dev',
+	site: 'https://wallet-ui-astro.colmena.dev',
 	integrations: [
 		starlight({
 			title: 'Wallet UI',
@@ -26,6 +26,13 @@ export default defineConfig({
 				},
 			],
 			head: [
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'robots',
+						content: 'noindex, nofollow',
+					},
+				},
 				{
 					tag: 'script',
 					content:
