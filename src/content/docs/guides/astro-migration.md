@@ -1,9 +1,11 @@
 ---
-title: Astro migration status
-description: Current migration status for the new Wallet UI docs site.
+title: Migration status
+description: What has already moved into the Astro docs site and what is still deferred.
 ---
 
-The new docs site is now running on:
+Use this page to understand the current scope of the Astro docs site. It is a status page for the docs migration, not a substitute for the published SDK docs.
+
+## Current platform
 
 - **Astro 6**
 - **Starlight**
@@ -13,11 +15,11 @@ The new docs site is now running on:
 
 ## What has moved over
 
-- React docs
-- React Native docs for both `@wallet-ui/react-native-kit` and `@wallet-ui/react-native-web3js`
-- Core docs
+- [React SDK docs](/react/)
+- [React Native SDK docs](/react-native/) for both `@wallet-ui/react-native-kit` and `@wallet-ui/react-native-web3js`
+- [Core docs](/core/)
 - Sidebar generation from the migrated `meta.json` structure
-- Section root landing pages for `/react/` and `/react-native/`
+- Section landing pages for the main SDK entry points
 
 ## What is intentionally deferred
 
@@ -33,4 +35,4 @@ The new docs site is now running on:
 
 ## Notes
 
-This guide is now a real migration tracker rather than a bootstrap placeholder.
+Treat this page as an operational tracker. For product documentation, start from the relevant SDK overview page instead.
