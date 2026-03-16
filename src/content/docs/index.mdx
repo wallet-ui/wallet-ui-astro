@@ -4,9 +4,8 @@ description: Wallet UI is the modern UI for the Wallet Standard.
 template: splash
 hero:
   title: |
-    Wallet UI docs,
-    rebuilt with Astro
-  tagline: The Astro + Starlight docs preview is live with migrated React, React Native, and Core docs.
+    Wallet UI docs
+  tagline: Start with React, React Native, or Core, then use the migration guide to track what has already moved into the Astro docs site.
   image:
     file: ../../assets/wallet-ui.png
   actions:
@@ -16,6 +15,9 @@ hero:
     - text: Browse React Native docs
       link: /react-native/
       icon: right-arrow
+    - text: Browse Core docs
+      link: /core/
+      icon: right-arrow
     - text: View source repo
       link: https://github.com/wallet-ui/wallet-ui
       icon: external
@@ -24,7 +26,9 @@ hero:
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-## What is ready
+Wallet UI is the modern UI layer for Wallet Standard apps. These docs are organized by SDK so you can jump straight into setup, concepts, and API reference material without digging through the migration tracker first.
+
+## Start with the SDK you are using
 
 <CardGrid stagger>
 	<LinkCard
@@ -44,7 +48,7 @@ import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 	/>
 	<LinkCard
 		href="/guides/astro-migration/"
-		title="Migration status"
-		description="Track what has already moved over and what is still intentionally deferred."
+		title="Migration guide"
+		description="See what is already published here, what is intentionally deferred, and where to look next."
 	/>
 </CardGrid>
