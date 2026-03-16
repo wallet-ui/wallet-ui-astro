@@ -5,49 +5,49 @@ description: Start here for Wallet UI React Native package selection, setup, and
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Wallet UI ships two React Native package variants. Choose the package that matches your Solana client stack, then follow that package's setup, concepts, hooks, and provider docs.
+Wallet UI ships two React Native package variants. The docs below share the common React Native guidance and call out `@wallet-ui/react-native-kit` and `@wallet-ui/react-native-web3js` differences inline where they matter.
 
 ## Choose a package
 
 <CardGrid stagger>
 	<LinkCard
-		href="./kit/getting-started"
+		href="./getting-started"
 		title="@wallet-ui/react-native-kit"
-		description="Use the SDK built on top of `@solana/kit`, including Expo setup and package docs."
+		description="Use the SDK built on top of `@solana/kit`, with shared docs and synced Kit tabs for variant-specific examples."
 	/>
 	<LinkCard
-		href="./web3js/getting-started"
+		href="./getting-started"
 		title="@wallet-ui/react-native-web3js"
-		description="Use the SDK built on top of `@solana/web3.js`, with parallel setup and API docs."
+		description="Use the SDK built on top of `@solana/web3.js`, with shared docs and synced Web3.js tabs for variant-specific examples."
 	/>
 </CardGrid>
 
-## Compare package docs
+## Shared docs
 
 <CardGrid stagger>
 	<LinkCard
-		href="./kit/core-concepts"
-		title="Kit core concepts"
-		description="Review the architecture and connection model for the `@solana/kit` variant."
+		href="./getting-started"
+		title="Getting started"
+		description="Choose a package, review template availability, and start with the shared Expo setup."
 	/>
 	<LinkCard
-		href="./web3js/core-concepts"
-		title="Web3.js core concepts"
-		description="Review the architecture and connection model for the `@solana/web3.js` variant."
+		href="./core-concepts"
+		title="Core concepts"
+		description="Review the shared architecture and the kit vs. web3.js client model differences."
 	/>
 	<LinkCard
-		href="./web3js/hooks/"
-		title="Web3.js hook references"
-		description="Browse the hook APIs for the `@solana/web3.js` variant."
+		href="./guides/expo"
+		title="Expo guide"
+		description="Follow the shared React Native + Expo setup with package-specific code examples."
 	/>
 	<LinkCard
-		href="./kit/providers/"
-		title="Kit provider reference"
-		description="Review the provider API for the `@solana/kit` variant."
+		href="./hooks/"
+		title="Hook references"
+		description="Browse shared hook references with kit and web3.js API tables and examples."
 	/>
 	<LinkCard
-		href="./web3js/providers/"
-		title="Web3.js provider reference"
-		description="Review the provider API for the `@solana/web3.js` variant."
+		href="./providers/"
+		title="Provider reference"
+		description="Review `MobileWalletProvider` props and setup for both package variants."
 	/>
 </CardGrid>
