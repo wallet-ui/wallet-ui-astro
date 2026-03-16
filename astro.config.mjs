@@ -3,6 +3,7 @@ import catppuccin from '@catppuccin/starlight';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
+import { docsSidebar } from './src/sidebar.mjs';
 
 export default defineConfig({
 	site: 'https://wallet-ui-astro.colmena.dev',
@@ -16,15 +17,7 @@ export default defineConfig({
 				alt: 'Wallet UI',
 			},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/wallet-ui/wallet-ui' }],
-			sidebar: [
-				{
-					label: 'Start Here',
-					items: [
-						{ label: 'Overview', slug: '' },
-						{ label: 'Astro migration status', slug: 'guides/astro-migration' },
-					],
-				},
-			],
+			sidebar: docsSidebar,
 			head: [
 				{
 					tag: 'meta',
