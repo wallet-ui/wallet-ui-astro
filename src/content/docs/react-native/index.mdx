@@ -1,0 +1,48 @@
+---
+title: React Native SDK
+description: Start here for Wallet UI React Native package selection, setup, and API docs.
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Wallet UI ships two React Native package variants. Choose the package that matches your Solana client stack, then use the linked setup, concepts, hooks, and provider docs.
+
+## Choose a package
+
+<CardGrid stagger>
+	<LinkCard
+		href="./kit/getting-started"
+		title="@wallet-ui/react-native-kit"
+		description="Use the SDK built on top of `@solana/kit`, including Expo setup and package docs."
+	/>
+	<LinkCard
+		href="./web3js/getting-started"
+		title="@wallet-ui/react-native-web3js"
+		description="Use the SDK built on top of `@solana/web3.js`, with parallel setup and API docs."
+	/>
+</CardGrid>
+
+## Common paths
+
+<CardGrid stagger>
+	<LinkCard
+		href="./kit/core-concepts"
+		title="Kit core concepts"
+		description="Review the architecture and connection model for the `@solana/kit` variant."
+	/>
+	<LinkCard
+		href="./web3js/core-concepts"
+		title="Web3.js core concepts"
+		description="Review the architecture and connection model for the `@solana/web3.js` variant."
+	/>
+	<LinkCard
+		href="./kit/hooks/"
+		title="Hook references"
+		description="Browse the shared hook APIs available in both React Native packages."
+	/>
+	<LinkCard
+		href="./kit/providers/"
+		title="Provider references"
+		description="Start with the provider docs, then compare with the matching Web3.js provider page."
+	/>
+</CardGrid>
