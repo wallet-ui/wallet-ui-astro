@@ -11,6 +11,7 @@ on:
 
 env:
   IMAGE_NAME: ${{ github.repository }}
+  DOKPLOY_WEBHOOK_URL: ${{ secrets.DOKPLOY_WEBHOOK_URL }}
 
 concurrency:
   group: deploy-${{ github.ref }}
@@ -60,5 +61,5 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Trigger Dokploy deploy
-        if: github.event_name != 'pull_request' && secrets.DOKPLOY_WEBHOOK_URL != ''
-        run: curl -sSf -X POST "${{ secrets.DOKPLOY_WEBHOOK_URL }}"
+        if: github.event_name != 'pull_request' && env.DOKPLOY_WEBHOOK_URL != ''
+        run: curl -sSf -X POST "$DOKPLOY_WEBHOOK_URL"
