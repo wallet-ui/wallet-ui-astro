@@ -6,12 +6,15 @@ hero:
   title: |
     Wallet UI docs,
     rebuilt with Astro
-  tagline: A new Starlight + Tailwind base is in place, using the Catppuccin Mocha theme.
+  tagline: The Astro + Starlight docs preview is live with migrated React, React Native, and Core docs.
   image:
     file: ../../assets/wallet-ui.png
   actions:
-    - text: Astro migration status
-      link: /guides/astro-migration/
+    - text: Browse React docs
+      link: /react/
+      icon: right-arrow
+    - text: Browse React Native docs
+      link: /react-native/
       icon: right-arrow
     - text: View source repo
       link: https://github.com/wallet-ui/wallet-ui
@@ -19,18 +22,29 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 ## What is ready
 
 <CardGrid stagger>
-	<Card title="Starlight + Tailwind" icon="open-book">
-		The new docs repo is scaffolded from the Starlight Tailwind starter on Astro 6.
-	</Card>
-	<Card title="Catppuccin Mocha" icon="star">
-		The base theme is wired up with Catppuccin for Starlight using the Mocha flavor.
-	</Card>
-	<Card title="Migration prep" icon="setting">
-		The old docs inventory and the React Native dedupe audit are both complete, so the next step is porting real content.
-	</Card>
+	<LinkCard
+		href="/react/"
+		title="React SDK"
+		description="Getting started, core concepts, framework guides, components, hooks, providers, and styling docs are live."
+	/>
+	<LinkCard
+		href="/react-native/"
+		title="React Native SDK"
+		description="Kit and Web3.js package docs are live, including setup, hooks, and provider references."
+	/>
+	<LinkCard
+		href="/core/"
+		title="Core SDK"
+		description="Core cluster, storage, and utility docs are migrated and available in the preview."
+	/>
+	<LinkCard
+		href="/guides/astro-migration/"
+		title="Migration status"
+		description="Track what has already moved over and what is still intentionally deferred."
+	/>
 </CardGrid>
