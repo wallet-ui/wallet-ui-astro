@@ -1,0 +1,36 @@
+---
+title: Wallet UI
+description: Wallet UI is the modern UI for the Wallet Standard.
+template: splash
+hero:
+  title: |
+    Wallet UI docs,
+    rebuilt with Astro
+  tagline: A new Starlight + Tailwind base is in place, using the Catppuccin Mocha theme.
+  image:
+    file: ../../assets/wallet-ui.png
+  actions:
+    - text: Astro migration status
+      link: /guides/astro-migration/
+      icon: right-arrow
+    - text: View source repo
+      link: https://github.com/wallet-ui/wallet-ui
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What is ready
+
+<CardGrid stagger>
+	<Card title="Starlight + Tailwind" icon="open-book">
+		The new docs repo is scaffolded from the Starlight Tailwind starter on Astro 6.
+	</Card>
+	<Card title="Catppuccin Mocha" icon="star">
+		The base theme is wired up with Catppuccin for Starlight using the Mocha flavor.
+	</Card>
+	<Card title="Migration prep" icon="setting">
+		The old docs inventory and the React Native dedupe audit are both complete, so the next step is porting real content.
+	</Card>
+</CardGrid>
