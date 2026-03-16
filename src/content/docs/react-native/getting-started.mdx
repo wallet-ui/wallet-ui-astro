@@ -35,7 +35,20 @@ Choose the package that matches the Solana client stack already used by your app
 
 ## Starter templates
 
-The current starter templates are documented for `@wallet-ui/react-native-web3js`.
+Starter templates are available for both React Native packages.
+
+### Kit
+
+<PackageManagerTabs
+	npm={`npx create-solana-dapp@latest -t kit-expo-minimal
+npx create-solana-dapp@latest -t kit-expo-uniwind`}
+	pnpm={`pnpm dlx create-solana-dapp@latest -t kit-expo-minimal
+pnpm dlx create-solana-dapp@latest -t kit-expo-uniwind`}
+	bun={`bunx create-solana-dapp@latest -t kit-expo-minimal
+bunx create-solana-dapp@latest -t kit-expo-uniwind`}
+/>
+
+### Web3.js
 
 <PackageManagerTabs
 	npm={`npx create-solana-dapp@latest -t web3js-expo-minimal
@@ -49,20 +62,16 @@ bunx create-solana-dapp@latest -t web3js-expo
 bunx create-solana-dapp@latest -t web3js-expo-paper`}
 />
 
-<Aside type="note" title="Kit projects">
-	The Astro docs do not currently advertise parallel starter templates for `@wallet-ui/react-native-kit`. Use the shared Expo guide below to add Kit to a new or existing app.
-</Aside>
-
 ## Setup guides
 
 <CardGrid stagger>
 	<LinkCard
-		href="./guides/expo"
+		href="/react-native/guides/expo/"
 		title="Expo"
 		description="Set up Wallet UI in Expo with shared steps and package-specific code examples."
 	/>
 	<LinkCard
-		href="./core-concepts"
+		href="/react-native/core-concepts/"
 		title="Core concepts"
 		description="Review the shared architecture and the important kit vs. web3.js differences."
 	/>

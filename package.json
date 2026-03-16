@@ -6,6 +6,8 @@
     "astro": "astro",
     "build": "astro build",
     "check": "astro check",
+    "check:dead-links:dist": "node scripts/check-dead-links.mjs",
+    "check:dead-links": "pnpm build && pnpm check:dead-links:dist",
     "dev": "astro dev",
     "preview": "astro preview",
     "start": "astro dev"
