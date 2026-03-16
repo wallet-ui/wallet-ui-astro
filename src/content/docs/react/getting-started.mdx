@@ -4,6 +4,7 @@ description: Getting started with the Wallet UI React SDK.
 ---
 
 import FrameworkGrid from '../../../components/docs/FrameworkGrid.astro';
+import PackageManagerTabs from '../../../components/docs/PackageManagerTabs.astro';
 
 ## Get started with a template
 
@@ -15,9 +16,11 @@ Basic Next.js app with Tailwind, gill and Wallet UI.
 
 Use templates `gill-next-tailwind-basic` or `gill-next-tailwind-counter` to generate Anchor examples.
 
-```package-install
-npx create-solana-dapp@latest -t gill-next-tailwind
-```
+<PackageManagerTabs
+	npm="npx create-solana-dapp@latest -t gill-next-tailwind"
+	pnpm="pnpm dlx create-solana-dapp@latest -t gill-next-tailwind"
+	bun="bunx create-solana-dapp@latest -t gill-next-tailwind"
+/>
 
 ### React with Vite and Tailwind CSS
 
@@ -25,9 +28,11 @@ Basic React app with Vite, Tailwind, gill and Wallet UI.
 
 Use templates `gill-react-vite-tailwind-basic` or `gill-react-vite-tailwind-counter` to generate Anchor examples.
 
-```package-install
-npx create-solana-dapp@latest -t gill-react-vite-tailwind
-```
+<PackageManagerTabs
+	npm="npx create-solana-dapp@latest -t gill-react-vite-tailwind"
+	pnpm="pnpm dlx create-solana-dapp@latest -t gill-react-vite-tailwind"
+	bun="bunx create-solana-dapp@latest -t gill-react-vite-tailwind"
+/>
 
 ## Framework guide
 

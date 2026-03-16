@@ -4,6 +4,7 @@ description: Set up Wallet UI with React Router
 ---
 
 import Callout from '../../../../components/docs/Callout.astro';
+import PackageManagerTabs from '../../../../components/docs/PackageManagerTabs.astro';
 
 This guide explains how to integrate Wallet UI into a React application that uses React Router for navigation.
 
@@ -18,9 +19,11 @@ For more information about styling, see the [Styling section](../styling).
 
 If you haven't already, add `react-router-dom` to your project.
 
-```package-install
-npm install react-router-dom
-```
+<PackageManagerTabs
+	npm="npm install react-router-dom"
+	pnpm="pnpm add react-router-dom"
+	bun="bun add react-router-dom"
+/>
 
 ## 2. Place the WalletUiProvider
 

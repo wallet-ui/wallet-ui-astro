@@ -3,21 +3,27 @@ title: Getting started with Next.js
 description: Set up Wallet UI with Next.js
 ---
 
+import PackageManagerTabs from '../../../../components/docs/PackageManagerTabs.astro';
+
 ## Generate new application
 
 If you start from scratch, you can use [create-next-app](https://nextjs.org/docs/pages/api-reference/cli/create-next-app) to create new Next.js application:
 
-```package-install
-npx create-next-app@latest --app --src-dir --typescript --tailwind
-```
+<PackageManagerTabs
+	npm="npx create-next-app@latest --app --src-dir --typescript --tailwind"
+	pnpm="pnpm dlx create-next-app@latest --app --src-dir --typescript --tailwind"
+	bun="bunx create-next-app@latest --app --src-dir --typescript --tailwind"
+/>
 
 ## Install dependencies
 
 Now that you have a Next.js app (either a new or existing one), you can install the dependencies:
 
-```package-install
-npm install @wallet-ui/react @wallet-ui/core
-```
+<PackageManagerTabs
+	npm="npm install @wallet-ui/react @wallet-ui/core"
+	pnpm="pnpm add @wallet-ui/react @wallet-ui/core"
+	bun="bun add @wallet-ui/react @wallet-ui/core"
+/>
 
 ## Add Solana Provider
 
