@@ -47,6 +47,10 @@ function buildSection(sectionSlug) {
 			continue;
 		}
 
+		if (meta.root && entry === 'index') {
+			continue;
+		}
+
 		const relativeSlug = `${sectionSlug}/${entry}`;
 		if (!pageExists(relativeSlug)) continue;
 
@@ -69,10 +73,7 @@ const rootMeta = readJson('meta.json');
 export const docsSidebar = [
 	{
 		label: 'Start Here',
-		items: [
-			{ label: 'Overview', slug: '' },
-			{ label: 'Site status', slug: 'guides/astro-migration' },
-		],
+		items: [{ label: 'Overview', slug: '' }],
 	},
 	...rootMeta.pages.map(buildSection),
 ];

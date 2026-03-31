@@ -26,7 +26,7 @@ const legacyRedirects = {
 	'/docs/react/core-concepts': '/react/core-concepts',
 	'/docs/react/getting-started': '/react/getting-started',
 	'/docs/react/guides/next': '/react/guides/next',
-	'/docs/react/guides/react-router': '/react/guides/react-router',
+	'/docs/react/guides/react-router': '/react/guides/vite',
 	'/docs/react/guides/vite': '/react/guides/vite',
 	'/docs/react/hooks': '/react/hooks',
 	'/docs/react/hooks/use-wallet-ui': '/react/hooks/use-wallet-ui',
@@ -49,7 +49,9 @@ const legacyRedirects = {
 	'/docs/react/styling/tailwind': '/react/styling/tailwind',
 };
 
-
 export const redirects = {
 	...legacyRedirects,
+	'/guides/astro-migration': '/',
+	'/guides/choose-your-sdk': '/',
+	'/react/guides/react-router': '/react/guides/vite',
 };
