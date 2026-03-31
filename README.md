@@ -69,7 +69,8 @@ Cloudflare-side wiring still needs to be completed after this PR lands:
 2. Create or select the Worker with the exact name `wallet-ui-astro` so it matches the `name` value in `wrangler.toml`. If the dashboard Worker name does not match that field, builds will target the wrong Worker.
 3. Configure the production branch for the Worker build in Cloudflare.
 4. Confirm the deployed Worker is live at `https://wallet-ui-astro.wallet-ui.workers.dev`.
-5. Confirm the deployed site still serves `robots.txt` with `Disallow: /`.
+5. If a custom hostname is added later, bind it to the same Worker in Cloudflare and proxy its DNS record.
+6. Confirm the deployed site still serves `robots.txt` with `Disallow: /`.
 
 ## Next steps
 
