@@ -1,38 +1,40 @@
 ---
-title: Migration status
-description: What has already moved into the Astro docs site and what is still deferred.
+title: Site status
+description: The current list of known unfinished items in the Astro docs site.
 ---
 
-Use this page to understand the current scope of the Astro docs site. It is a status page for the docs migration, not a substitute for the published SDK docs.
+Use this page as the working tracker for the Astro docs site. It should reflect the current known unfinished items in this repo and nothing else.
 
-## Current platform
-
-- **Astro 6**
-- **Starlight**
-- **Tailwind CSS**
-- **Catppuccin for Starlight** using the **Mocha** flavor
-- **Starlight/Pagefind search** for static docs search
-
-## What has moved over
+## What is already in place
 
 - [React SDK docs](/react/)
 - [React Native SDK docs](/react-native/) for both `@wallet-ui/react-native-kit` and `@wallet-ui/react-native-web3js`
 - [Core docs](/core/)
 - Sidebar generation from the migrated `meta.json` structure
 - Section landing pages for the main SDK entry points
+- Legacy `/docs/...` redirects into the current route structure
+- **Astro 6**
+- **Starlight**
+- **Tailwind CSS**
+- **Catppuccin for Starlight** using the **Mocha** flavor
+- **Starlight/Pagefind search** for static docs search
 
-## What is intentionally deferred
+## Remaining content placeholders
 
-- OG image generation parity with the old site
+These are the explicit unfinished content markers currently present in the docs content:
+
+- `/react/hooks/use-wallet-ui-sign-and-send/` — `TBD: DEMO`
+- `/react/hooks/use-wallet-ui-signer/` — `TBD: DEMO`
+
+## Remaining site work
+
+These items are still intentionally unfinished or need follow-up work in the Astro site:
+
+- OG image generation parity
 - Sentry and analytics parity
-- React Native package dedupe work in the source monorepo
-
-## Immediate next steps
-
-1. Run a broader QA pass for broken links, missing assets, and formatting issues across the migrated docs.
-2. Continue polishing the information architecture and homepage now that the real content is in place.
-3. Plan the eventual `wallet-ui.dev` cutover once the Astro preview is stable enough.
+- Run a broader QA pass for broken links, missing assets, and formatting issues across the docs
+- Continue polishing the information architecture and homepage
 
 ## Notes
 
-Treat this page as an operational tracker. For product documentation, start from the relevant SDK overview page instead.
+This page should stay in sync with the actual remaining TBD/TODO items in the Astro site. When an item is done, remove it here in the same change.
