@@ -1,7 +1,0 @@
-.astro
-.git
-.github
-.gitignore
-dist
-node_modules
-README.md

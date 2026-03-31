@@ -18,6 +18,8 @@ pnpm build
 pnpm preview
 ```
 
+`pnpm preview` runs the Worker locally through Wrangler after a build. `pnpm dev` remains the standard Astro dev server.
+
 ## Current scope
 
 This repo is the new public home for the Wallet UI docs migration away from the legacy Next.js + Fumadocs site.
@@ -35,13 +37,40 @@ The current baseline includes:
 
 ## Deployment
 
-The site is intended to deploy as a static container using `ghcr.io/beeman/static-server`.
+The site targets Cloudflare Workers through Astro's Cloudflare adapter and Wrangler.
 
-Flow:
+Why this path:
 
-- GitHub Actions builds the Astro site into `dist/`
-- a container image is published to GHCR
-- Dokploy pulls the image and serves it on `wallet-ui-astro.colmena.dev`
+- it preserves the existing Starlight docs behavior and Astro redirects
+- it keeps the current temporary domain and noindex posture intact
+- it is the simplest deploy target that still leaves room for future server-side features such as OG image generation
+
+Deployment ownership is Cloudflare-side:
+
+- Cloudflare Workers Builds should connect this GitHub repository and perform deploys for the configured production branch
+- GitHub Actions in this repo are CI only: install, `pnpm check`, `pnpm build`, and a safe Wrangler dry-run validation
+- repository deploy secrets are not required for the normal deployment path
+
+Local Wrangler commands:
+
+```bash
+pnpm build
+pnpm preview
+pnpm deploy
+```
+
+`pnpm deploy` is an authenticated manual Wrangler deploy, not the intended day-to-day deployment mechanism for this repo.
+
+## Manual Cloudflare Setup
+
+Cloudflare-side wiring still needs to be completed after this PR lands:
+
+1. In Cloudflare Workers Builds / GitHub integration, connect this repository to the target Cloudflare account.
+2. Create or select the Worker with the exact name `wallet-ui-astro` so it matches the `name` value in `wrangler.toml`. If the dashboard Worker name does not match that field, builds will target the wrong Worker.
+3. Configure the production branch for the Worker build in Cloudflare.
+4. Bind the custom hostname `wallet-ui-astro.colmena.dev` to that Worker in Cloudflare.
+5. Ensure the DNS record for `wallet-ui-astro.colmena.dev` is proxied through Cloudflare.
+6. Confirm the deployed site still serves `robots.txt` with `Disallow: /`.
 
 ## Next steps
 

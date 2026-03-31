@@ -11,11 +11,13 @@
     "check:migration": "bun check/check-paths.ts",
     "check:migration:new": "bun check/collect-new-paths.ts",
     "check:migration:old": "bun check/collect-old-paths.ts",
+    "deploy": "wrangler deploy",
     "dev": "astro dev",
-    "preview": "astro preview",
+    "preview": "wrangler dev",
     "start": "astro dev"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.1.6",
     "@astrojs/starlight": "^0.38.1",
     "@astrojs/starlight-tailwind": "^5.0.0",
     "@catppuccin/starlight": "^2.0.1",
@@ -26,6 +28,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.7",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.9.1"
   }
 }
