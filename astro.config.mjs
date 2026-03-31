@@ -1,5 +1,6 @@
 // @ts-check
 import catppuccin from '@catppuccin/starlight';
+import cloudflare from '@astrojs/cloudflare';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
@@ -7,7 +8,12 @@ import { redirects } from './src/redirects.mjs';
 import { docsSidebar } from './src/sidebar.mjs';
 
 export default defineConfig({
-	site: 'https://wallet-ui-astro.colmena.dev',
+	site: 'https://wallet-ui-astro.wallet-ui.workers.dev',
+	output: 'server',
+	adapter: cloudflare({
+		imageService: 'compile',
+		prerenderEnvironment: 'node',
+	}),
 	integrations: [
 		starlight({
 			title: 'Wallet UI',

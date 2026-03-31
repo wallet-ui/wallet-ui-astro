@@ -9,7 +9,7 @@ bun check/collect-old-paths.ts --json
 bun check/collect-new-paths.ts --json
 bun check/check-paths.ts --mode inventory
 bun check/check-paths.ts --mode tbd
-bun check/check-paths.ts --old-base https://wallet-ui.dev --new-base https://wallet-ui-astro.colmena.dev
+bun check/check-paths.ts --old-base https://wallet-ui.dev --new-base https://wallet-ui-astro.wallet-ui.workers.dev
 ```
 
 ## What "TBD" means
