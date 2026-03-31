@@ -23,17 +23,17 @@ Use this page as the working tracker for the Astro docs site. It should reflect 
 
 These are the explicit unfinished content markers currently present in the docs content:
 
-- `/react/hooks/use-wallet-ui-sign-and-send/` — `TBD: DEMO`
-- `/react/hooks/use-wallet-ui-signer/` — `TBD: DEMO`
+- `/react/hooks/use-wallet-ui-sign-and-send/` — `TBD: DEMO` ([issue #10](https://github.com/wallet-ui/wallet-ui-astro/issues/10): `docs(demos): capture deferred hook demo candidates`)
+- `/react/hooks/use-wallet-ui-signer/` — `TBD: DEMO` ([issue #10](https://github.com/wallet-ui/wallet-ui-astro/issues/10): `docs(demos): capture deferred hook demo candidates`)
 
 ## Remaining site work
 
 These items are still intentionally unfinished or need follow-up work in the Astro site:
 
-- OG image generation parity
-- Sentry and analytics parity
-- Run a broader QA pass for broken links, missing assets, and formatting issues across the docs
-- Continue polishing the information architecture and homepage
+- [Issue #11](https://github.com/wallet-ui/wallet-ui-astro/issues/11): restore Open Graph image parity
+- [Issue #12](https://github.com/wallet-ui/wallet-ui-astro/issues/12): restore Sentry and analytics parity
+- [Issue #13](https://github.com/wallet-ui/wallet-ui-astro/issues/13): run a broader QA pass for broken links, missing assets, and formatting issues across the docs
+- [Issue #14](https://github.com/wallet-ui/wallet-ui-astro/issues/14): continue polishing the information architecture and homepage
 
 ## Notes
 
