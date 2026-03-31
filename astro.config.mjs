@@ -8,7 +8,7 @@ import { redirects } from './src/redirects.mjs';
 import { docsSidebar } from './src/sidebar.mjs';
 
 export default defineConfig({
-	site: 'https://wallet-ui-astro.colmena.dev',
+	site: 'https://wallet-ui-astro.wallet-ui.workers.dev',
 	output: 'server',
 	adapter: cloudflare({
 		imageService: 'compile',

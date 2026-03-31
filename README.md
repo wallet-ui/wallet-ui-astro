@@ -24,9 +24,9 @@ pnpm preview
 
 This repo is the new public home for the Wallet UI docs migration away from the legacy Next.js + Fumadocs site.
 
-Temporary preview deploy target:
+Current live temporary site:
 
-- https://wallet-ui-astro.colmena.dev
+- https://wallet-ui-astro.wallet-ui.workers.dev
 
 The current baseline includes:
 
@@ -42,7 +42,7 @@ The site targets Cloudflare Workers through Astro's Cloudflare adapter and Wrang
 Why this path:
 
 - it preserves the existing Starlight docs behavior and Astro redirects
-- it keeps the current temporary domain and noindex posture intact
+- it keeps the current temporary live URL and noindex posture intact
 - it is the simplest deploy target that still leaves room for future server-side features such as OG image generation
 
 Deployment ownership is Cloudflare-side:
@@ -68,9 +68,8 @@ Cloudflare-side wiring still needs to be completed after this PR lands:
 1. In Cloudflare Workers Builds / GitHub integration, connect this repository to the target Cloudflare account.
 2. Create or select the Worker with the exact name `wallet-ui-astro` so it matches the `name` value in `wrangler.toml`. If the dashboard Worker name does not match that field, builds will target the wrong Worker.
 3. Configure the production branch for the Worker build in Cloudflare.
-4. Bind the custom hostname `wallet-ui-astro.colmena.dev` to that Worker in Cloudflare.
-5. Ensure the DNS record for `wallet-ui-astro.colmena.dev` is proxied through Cloudflare.
-6. Confirm the deployed site still serves `robots.txt` with `Disallow: /`.
+4. Confirm the deployed Worker is live at `https://wallet-ui-astro.wallet-ui.workers.dev`.
+5. Confirm the deployed site still serves `robots.txt` with `Disallow: /`.
 
 ## Next steps
 
