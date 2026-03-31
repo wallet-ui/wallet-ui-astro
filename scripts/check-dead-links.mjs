@@ -3,6 +3,7 @@ import path from 'node:path';
 import process from 'node:process';
 
 const distDir = path.resolve('dist');
+const clientDir = path.join(distDir, 'client');
 const hrefPattern = /<a\b[^>]*\bhref=(["'])(.*?)\1/gi;
 const ignoredProtocols = /^(?:[a-z]+:|\/\/)/i;
 
@@ -19,8 +20,8 @@ async function walkHtmlFiles(dir) {
 	return files.flat();
 }
 
-function toRoutePath(filePath) {
-	const relPath = path.relative(distDir, filePath).split(path.sep).join('/');
+function toRoutePath(filePath, htmlRootDir) {
+	const relPath = path.relative(htmlRootDir, filePath).split(path.sep).join('/');
 	if (relPath === 'index.html') return '/';
 	if (relPath.endsWith('/index.html')) return `/${relPath.slice(0, -'index.html'.length)}`;
 	return `/${relPath}`;
@@ -35,14 +36,22 @@ async function pathExists(targetPath) {
 	}
 }
 
-async function routeExists(pathname) {
+async function resolveHtmlRootDir() {
+	if (await pathExists(clientDir)) {
+		return clientDir;
+	}
+
+	return distDir;
+}
+
+async function routeExists(pathname, htmlRootDir) {
 	const trimmed = pathname.replace(/\/+$/, '');
 	const candidates = pathname === '/'
-		? [path.join(distDir, 'index.html')]
+		? [path.join(htmlRootDir, 'index.html')]
 		: [
-				path.join(distDir, pathname, 'index.html'),
-				path.join(distDir, `${trimmed}.html`),
-				path.join(distDir, trimmed),
+				path.join(htmlRootDir, pathname, 'index.html'),
+				path.join(htmlRootDir, `${trimmed}.html`),
+				path.join(htmlRootDir, trimmed),
 			];
 
 	for (const candidate of candidates) {
@@ -58,19 +67,20 @@ async function main() {
 		process.exit(1);
 	}
 
-	const htmlFiles = await walkHtmlFiles(distDir);
+	const htmlRootDir = await resolveHtmlRootDir();
+	const htmlFiles = await walkHtmlFiles(htmlRootDir);
 	const failures = [];
 
 	for (const filePath of htmlFiles) {
 		const html = await readFile(filePath, 'utf8');
-		const pageUrl = new URL(toRoutePath(filePath), 'https://example.test');
+		const pageUrl = new URL(toRoutePath(filePath, htmlRootDir), 'https://example.test');
 
 		for (const match of html.matchAll(hrefPattern)) {
 			const href = match[2];
 			if (!href || href.startsWith('#') || ignoredProtocols.test(href)) continue;
 
 			const resolved = new URL(href, pageUrl);
-			if (!(await routeExists(resolved.pathname))) {
+			if (!(await routeExists(resolved.pathname, htmlRootDir))) {
 				failures.push({
 					page: pageUrl.pathname,
 					href,
