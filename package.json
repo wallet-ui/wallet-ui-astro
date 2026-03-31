@@ -6,8 +6,11 @@
     "astro": "astro",
     "build": "astro build",
     "check": "astro check",
-    "check:dead-links:dist": "node scripts/check-dead-links.mjs",
     "check:dead-links": "pnpm build && pnpm check:dead-links:dist",
+    "check:dead-links:dist": "node scripts/check-dead-links.mjs",
+    "check:migration": "bun check/check-paths.ts",
+    "check:migration:new": "bun check/collect-new-paths.ts",
+    "check:migration:old": "bun check/collect-old-paths.ts",
     "dev": "astro dev",
     "preview": "astro preview",
     "start": "astro dev"

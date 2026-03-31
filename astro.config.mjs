@@ -3,6 +3,7 @@ import catppuccin from '@catppuccin/starlight';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
+import { redirects } from './src/redirects.mjs';
 import { docsSidebar } from './src/sidebar.mjs';
 
 export default defineConfig({
@@ -41,6 +42,7 @@ export default defineConfig({
 			customCss: ['./src/styles/global.css'],
 		}),
 	],
+	redirects,
 	vite: {
 		plugins: [tailwindcss()],
 	},
