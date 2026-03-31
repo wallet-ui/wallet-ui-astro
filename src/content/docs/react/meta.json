@@ -9,7 +9,6 @@
         "---Guides---",
         "guides/next",
         "guides/vite",
-        "guides/react-router",
         "---Components---",
         "components/index",
         "components/account-guard",
