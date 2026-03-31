@@ -19,12 +19,12 @@ Use this page as the working tracker for the Astro docs site. It should reflect 
 - **Catppuccin for Starlight** using the **Mocha** flavor
 - **Starlight/Pagefind search** for static docs search
 
-## Remaining content placeholders
+## Remaining demo follow-ups
 
-These are the explicit unfinished content markers currently present in the docs content:
+These pages still need their interactive demos ported, even though the API docs and source examples are already live:
 
-- `/react/hooks/use-wallet-ui-sign-and-send/` — `TBD: DEMO` ([issue #10](https://github.com/wallet-ui/wallet-ui-astro/issues/10): `docs(demos): capture deferred hook demo candidates`)
-- `/react/hooks/use-wallet-ui-signer/` — `TBD: DEMO` ([issue #10](https://github.com/wallet-ui/wallet-ui-astro/issues/10): `docs(demos): capture deferred hook demo candidates`)
+- `/react/hooks/use-wallet-ui-sign-and-send/` — embedded demo still pending ([issue #10](https://github.com/wallet-ui/wallet-ui-astro/issues/10): `docs(demos): capture deferred hook demo candidates`)
+- `/react/hooks/use-wallet-ui-signer/` — embedded demo still pending ([issue #10](https://github.com/wallet-ui/wallet-ui-astro/issues/10): `docs(demos): capture deferred hook demo candidates`)
 
 ## Remaining site work
 
@@ -37,4 +37,4 @@ These items are still intentionally unfinished or need follow-up work in the Ast
 
 ## Notes
 
-This page should stay in sync with the actual remaining TBD/TODO items in the Astro site. When an item is done, remove it here in the same change.
+This page should stay in sync with the actual remaining follow-up items in the Astro site. When an item is done, remove it here in the same change.
