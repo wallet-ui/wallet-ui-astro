@@ -35,6 +35,14 @@ The current baseline includes:
 - Wallet UI branding assets
 - Minimal placeholder content for the migration phase
 
+## Social previews
+
+Docs pages now get prerendered social cards generated from each entry's title and description.
+
+- Starlight route middleware normalizes page-level `og:title`, `og:description`, `twitter:title`, and `twitter:description` values from each docs entry.
+- Build-time Astro endpoints under `src/pages/og/` render per-doc PNG cards with `sharp`, which keeps the deployed Worker simple because image rendering happens during the build, not at request time.
+- The shared `public/og.png` remains as the site-wide fallback for any non-doc route metadata.
+
 ## Deployment
 
 The site targets Cloudflare Workers through Astro's Cloudflare adapter and Wrangler.
@@ -43,7 +51,7 @@ Why this path:
 
 - it preserves the existing Starlight docs behavior and Astro redirects
 - it keeps the current temporary live URL and noindex posture intact
-- it is the simplest deploy target that still leaves room for future server-side features such as OG image generation
+- it supports prerendered per-page OG image assets without adding runtime rendering complexity to the Worker
 
 Deployment ownership is Cloudflare-side:
 
