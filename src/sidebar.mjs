@@ -71,7 +71,7 @@ export const docsSidebar = [
 		label: 'Start Here',
 		items: [
 			{ label: 'Overview', slug: '' },
-			{ label: 'Migration status', slug: 'guides/astro-migration' },
+			{ label: 'Site status', slug: 'guides/astro-migration' },
 		],
 	},
 	...rootMeta.pages.map(buildSection),
