@@ -1,5 +1,6 @@
 name = "wallet-ui-astro"
 compatibility_date = "2026-03-29"
+compatibility_flags = ["nodejs_compat"]
 
 [observability]
 enabled = true

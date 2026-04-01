@@ -118,12 +118,6 @@ export default defineConfig({
 	],
 	redirects,
 	vite: {
-		resolve: {
-			alias: {
-				// Cloudflare SSR should resolve the browser-safe entry instead of util-deprecate's Node-only main file.
-				'util-deprecate': 'util-deprecate/browser.js',
-			},
-		},
 		plugins: [tailwindcss()],
 	},
 });
