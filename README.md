@@ -47,6 +47,42 @@ Docs pages now get prerendered social cards generated from each entry's title an
 
 The site targets Cloudflare Workers through Astro's Cloudflare adapter and Wrangler.
 
+## Analytics
+
+This repo uses Cloudflare Web Analytics via the standard beacon script when a token is provided at build time.
+
+### Env var
+
+```bash
+PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN=<cloudflare-web-analytics-site-token>
+```
+
+### How it works
+
+- if `PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN` is set, Astro injects the Cloudflare beacon script into the site head during build
+- if the env var is unset, no analytics script is added
+- this keeps analytics configuration explicit and environment-driven instead of hardcoding a token in the repo
+
+### Cloudflare setup
+
+1. In Cloudflare, create or open the Web Analytics site for the target hostname.
+2. Copy the site token from the Cloudflare Web Analytics snippet.
+3. Set `PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN` in the Cloudflare build/deploy environment for this project.
+4. Deploy the site and confirm pageviews begin appearing in Cloudflare Web Analytics.
+
+If the final hostname is proxied through Cloudflare, Cloudflare can also auto-inject analytics from the dashboard. We still support the env-driven snippet path so deployment behavior stays explicit in repo setup and preview environments.
+
+## Worker observability
+
+Wrangler enables Cloudflare Worker observability directly in `wrangler.toml`:
+
+```toml
+[observability]
+enabled = true
+```
+
+This keeps request/error telemetry enabled at the Worker level from repo config instead of relying on a one-off dashboard toggle.
+
 Why this path:
 
 - it preserves the existing Starlight docs behavior and Astro redirects

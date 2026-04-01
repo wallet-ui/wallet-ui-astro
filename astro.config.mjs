@@ -15,6 +15,21 @@ import {
 import { socialImageHeight, socialImageWidth } from './src/og-image';
 import { docsSidebar } from './src/sidebar.mjs';
 
+const cloudflareWebAnalyticsToken = process.env.PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN;
+/** @type {Array<{ tag: 'script', attrs: Record<string, string | boolean | undefined> }>} */
+const cloudflareWebAnalyticsHead = cloudflareWebAnalyticsToken
+	? [
+			{
+				tag: 'script',
+				attrs: {
+					defer: true,
+					src: 'https://static.cloudflareinsights.com/beacon.min.js',
+					'data-cf-beacon': JSON.stringify({ token: cloudflareWebAnalyticsToken }),
+				},
+			},
+		]
+	: [];
+
 export default defineConfig({
 	site: siteUrl,
 	output: 'server',
@@ -34,6 +49,7 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/wallet-ui/wallet-ui' }],
 			sidebar: docsSidebar,
 			head: [
+				...cloudflareWebAnalyticsHead,
 				{
 					tag: 'meta',
 					attrs: {
