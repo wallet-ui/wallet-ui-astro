@@ -12,12 +12,16 @@ Wallet UI needs to know which Solana clusters your application supports. The cor
 - `createSolanaMainnet()`
 - `createSolanaTestnet()`
 
-Each of these functions returns a `SolanaCluster` object. You can also pass a custom RPC URL or a configuration object to override the default label or URL.
+Each helper returns a `SolanaCluster` object. You can pass a custom RPC URL directly, or provide a configuration object when you want to override the default label or endpoint details.
 
 <Callout type="info">
-    When using a public RPC endpoint for `mainnet-beta`, be aware of rate limits. For production applications, it is
+    When using a public RPC endpoint for `mainnet`, be aware of rate limits. For production applications, it is
     highly recommended to use a dedicated RPC provider.
 </Callout>
+
+## Typical usage
+
+Most apps expose a small set of clusters, then choose one of them as the active RPC target through the Wallet UI provider configuration.
 
 ### Usage
 
@@ -35,3 +39,10 @@ function App({ children }) {
     return <WalletUi config={config}>{children}</WalletUi>;
 }
 ```
+
+## Choosing clusters deliberately
+
+- Use `devnet` for most early integration and QA work.
+- Add `localnet` when your team runs a local validator during feature development.
+- Add `mainnet` only when you are ready to point users at production infrastructure.
+- Prefer a dedicated RPC URL for production traffic instead of the public default endpoint.

@@ -3,12 +3,34 @@ title: Overview
 description: Overview of the Wallet UI core library.
 ---
 
-`@wallet-ui/core` is the framework-agnostic foundation of Wallet UI. It provides the necessary building blocks for state management and configuration that power the UI components and hooks in the React package.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-You will usually touch this package indirectly through `@wallet-ui/react`, but the core docs are useful when you need to customize cluster support, storage behavior, or lower-level utilities.
+`@wallet-ui/core` is the framework-agnostic foundation of Wallet UI. It provides the cluster helpers, storage primitives, and utility functions that the higher-level SDKs build on.
+
+Most teams will start with `@wallet-ui/react` or a React Native package, then drop into the core package when they need to tune configuration details or reuse the lower-level building blocks directly.
+
+## When to use the core docs
+
+- You need to define which Solana clusters your app supports.
+- You want to customize how wallet or cluster selection is persisted.
+- You are looking for lower-level helpers used by the higher-level SDKs.
 
 ## Explore the core library
 
-- [**Clusters**](./clusters): Learn how to configure the Solana clusters your app supports.
-- [**Storage**](./storage): Understand how to manage and persist state.
-- [**Utilities**](./utilities): Discover the available utility functions.
+<CardGrid stagger>
+	<LinkCard
+		href="./clusters"
+		title="Clusters"
+		description="Configure the Solana endpoints your app offers, including custom RPC URLs and environment-specific labels."
+	/>
+	<LinkCard
+		href="./storage"
+		title="Storage"
+		description="Customize the persisted keys for selected wallet and cluster state."
+	/>
+	<LinkCard
+		href="./utilities"
+		title="Utilities"
+		description="Use the small helper APIs exported by the core package."
+	/>
+</CardGrid>
