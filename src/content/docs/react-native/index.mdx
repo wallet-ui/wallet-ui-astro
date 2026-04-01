@@ -7,6 +7,8 @@ import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 Wallet UI ships two React Native package variants. The docs below share the common React Native guidance and call out `@wallet-ui/react-native-kit` and `@wallet-ui/react-native-web3js` differences inline where they matter.
 
+Start here if you want to choose the right package once, follow a shared mobile setup flow, and only drop into package-specific details where the APIs truly differ.
+
 ## Choose a package
 
 <CardGrid stagger>
@@ -21,6 +23,8 @@ Wallet UI ships two React Native package variants. The docs below share the comm
 		description="Use the SDK built on top of `@solana/web3.js`, with shared docs and synced Web3.js tabs for variant-specific examples."
 	/>
 </CardGrid>
+
+If your app already uses `@solana/kit`, choose the Kit package. If it already uses `@solana/web3.js`, choose the Web3.js package and keep the rest of your Solana client layer consistent.
 
 ## Shared docs
 

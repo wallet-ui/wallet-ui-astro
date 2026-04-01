@@ -35,4 +35,26 @@ import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 	/>
 </CardGrid>
 
-Need lower-level reference material? See the [Core docs](/core/).
+## What these docs cover
+
+<CardGrid stagger>
+	<LinkCard
+		href="/react/"
+		title="React SDK"
+		description="Set up providers, ship the dropdown quickly, or build custom flows from hooks and context APIs."
+	/>
+	<LinkCard
+		href="/react-native/"
+		title="React Native SDK"
+		description="Choose the package variant that matches your Solana client stack and follow the shared mobile wallet flow."
+	/>
+	<LinkCard
+		href="/core/"
+		title="Core package"
+		description="Understand cluster helpers, storage primitives, and the lower-level utilities that power the SDKs."
+	/>
+</CardGrid>
+
+## Recommended path
+
+If you're integrating Wallet UI for the first time, start with the package guide for your app framework, then come back to the [Core docs](/core/) when you need custom clusters, storage behavior, or lower-level control.
